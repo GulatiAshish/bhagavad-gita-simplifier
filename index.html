@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bhagavatam Insight</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Bhagavatam Insight</h1>
+  </header>
+
+  <main>
+    <section class="selector">
+      <label for="verseInput">Enter Bhagavad Gita Verse (e.g.,SB     1.1):</label>
+      <input type="text" id="verseInput" placeholder="1.1">
+      <label for="levelSelect">Simplification Level:</label>
+      <select id="levelSelect">
+        <option value="beginner">Beginner</option>
+        <option value="medium" selected>Medium</option>
+        <option value="advanced">Advanced</option>
+      </select>
+      <button id="simplifyBtn" onclick="simplifyVerse()">Simplify Verse</button>
+    </section>
+
+    <section class="result">
+      <h2>Original Verse:</h2>
+      <p id="originalVerse">Enter a verse above and click "Simplify Verse".</p>
+
+      <h2>Simplified Explanation:</h2>
+      <p id="simplifiedExplanation"></p>
+    </section>
+
+    <section class="error" id="error"></section>
+  </main>
+
+  <footer>
+    &copy; Bhagavatam Insight | Educational Project | Ashish Gulati
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
