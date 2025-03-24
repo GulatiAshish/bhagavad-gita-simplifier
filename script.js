@@ -38,16 +38,16 @@ async function simplifyVerse() {
       
       // Generate simplified explanation based on level
       let explanation = '';
-      
-      if (level === 'beginner') {
-        explanation = data.purohit?.et || data.siva?.et || 'Translation not available'; // Use English translations
-      } else if (level === 'medium') {
-        explanation = `${data.purohit?.et || data.siva?.et || 'Translation not available'}\nAdditional context: ${data.siva?.ec || 'Not available'}`;
-      } else {
-        explanation = `${data.purohit?.et || data.siva?.et || 'Translation not available'}\n${data.chinmay?.hc || data.rams?.hc || 'Commentary not available'}`;
-      }
-      
-      simplifiedExplanationEl.innerHTML = explanation.replace(/\n/g, '<br>');
+
+if (level === 'beginner') {
+  explanation = data.purohit?.et || data.siva?.et || 'Translation not available';
+} else if (level === 'medium') {
+  explanation = `<strong>Translation:</strong><br>${data.purohit?.et || data.siva?.et || 'Translation not available'}<br><br><strong>Additional context:</strong><br>${data.siva?.ec || 'Not available'}`;
+} else {
+  explanation = `<strong>Translation:</strong><br>${data.purohit?.et || data.siva?.et || 'Translation not available'}<br><br><strong>Commentary:</strong><br>${data.chinmay?.hc || data.rams?.hc || 'Commentary not available'}`;
+}
+
+simplifiedExplanationEl.innerHTML = explanation;
       
     } catch (err) {
       errorEl.textContent = 'Failed to fetch verse data. Please check your input and try again.';
